@@ -1,9 +1,15 @@
 using System;
 
+namespace calculadoraIMC{
 
-class IMC {
-    static void Main(){
-        Console.Write("Digite seu peso: ");
+    class calculo{
         
+    }
+
+    class IMC {
+        static void Main(){
+            Console.Write("Digite seu peso: ");
+            
+        }
     }
 }
