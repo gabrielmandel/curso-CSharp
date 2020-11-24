@@ -29,6 +29,7 @@ namespace calculadoraIMC{
             float massa, altura, imc;    
             char continuar = 'S' ;
             char[,] cont = new char[2,2] {{'S','s'} , {'N','n'}};  
+            string mensagem = "batata";
           do{  
                 Console.Write("Digite seu peso(kg): ");
                 massa = float.Parse(Console.ReadLine());
@@ -39,10 +40,23 @@ namespace calculadoraIMC{
             
                 string resultado = grau(imc);
                 Console.WriteLine("Seu IMC é: {0} - {1}",imc,resultado);
+
                 Console.WriteLine("Deseja Continuar? [S/N]");
                 continuar = Char.Parse(Console.ReadLine());
+
             } while(continuar == 'S'  || continuar == 's');
-                Console.WriteLine("Obrigado por usar a calculadora!");
+
+            foreach(char c in cont){
+                if ( continuar == c){
+                     mensagem =  "Obrigado por usar nosso sistema!";
+                    break;
+                }
+                else{
+                     mensagem = "Opção Inválida, encerrando o programa...";
+                }
+            }
+
+            Console.WriteLine(mensagem);
         } 
     }
 }
