@@ -7,22 +7,33 @@ namespace calculadoraIMC{
     }
     class IMC 
     {
-        static string grau(double c){
-            string res;
-            if(c < 18.5){
-                res = "Abaixo do peso!";
-            } else if(c >= 18.5 && c < 25){
-                res = "Peso normal!";
-            } else if(c >= 25 && c < 30 ){
-                res = "Sobrepeso!";
-            } else if(c >= 30 && c < 35){
-                res = "Obesidade I";
-            } else if(c >= 35 && c < 40){
-                res = "Obesidade II";
-            } else{
-                res = "Obesidade III";
-            }
-            return res;
+        static string verificaGrauObesidade(double imc){
+
+            if(imc < 18.5){
+                return "Abaixo do peso!";
+            }  
+
+            if(imc >= 18.5 && imc < 25)
+            {
+                return "Peso normal!";
+            } 
+
+            if(imc >= 25 && imc < 30 )
+            {
+                return "Sobrepeso!";
+            }  
+
+            if(imc >= 30 && imc < 35)
+            {
+                return "Obesidade I";
+            } 
+
+            if(imc >= 35 && imc < 40)
+            {
+                return "Obesidade II";
+            } 
+
+            return "Obesidade III"; 
         }
         static void Main(){
             // IMC == PESO(kg) / ALTURA ^ 2
@@ -38,7 +49,7 @@ namespace calculadoraIMC{
 
                 imc = massa / (altura * altura);
             
-                string resultado = grau(imc);
+                string resultado = verificaGrauObesidade(imc);
                 Console.WriteLine("Seu IMC é: {0} - {1}",imc,resultado);
 
                 Console.WriteLine("Deseja Continuar? [S/N]");
